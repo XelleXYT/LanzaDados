@@ -188,6 +188,7 @@ public class Dados extends javax.swing.JFrame {
 
         labelSumResultado.setText("Suma resultados:");
 
+        textoSumResultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textoSumResultado.setEditable(false);
 
         botonLanzar.setText("Lanzar");
@@ -204,7 +205,7 @@ public class Dados extends javax.swing.JFrame {
             }
         });
 
-        labelNumClicks.setText("Numero de clicks:");
+        labelNumClicks.setText("Número de clicks:");
 
         textoNumClicks.setText("0");
 
@@ -228,22 +229,19 @@ public class Dados extends javax.swing.JFrame {
                         .addComponent(labelResultado)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(botonCerrar)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(labelSumResultado)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(labelSumResultado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoSumResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonCerrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoSumResultado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelNumClicks)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoNumClicks)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonLanzar)))))
+                        .addComponent(labelNumClicks)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoNumClicks)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botonLanzar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -265,11 +263,13 @@ public class Dados extends javax.swing.JFrame {
                     .addComponent(textoSumResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonLanzar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textoNumClicks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 2, Short.MAX_VALUE)
+                        .addComponent(botonLanzar))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botonCerrar)
-                        .addComponent(labelNumClicks)))
+                        .addComponent(labelNumClicks)
+                        .addComponent(textoNumClicks)))
                 .addGap(12, 12, 12))
         );
 
