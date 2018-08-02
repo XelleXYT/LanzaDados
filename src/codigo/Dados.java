@@ -13,6 +13,7 @@ public class Dados extends javax.swing.JFrame {
 
     /* ----------------------------- Variables ------------------------------ */
     int clicks = 0;
+    int saltoLinea = 20;
 
     /* ------------------------------ Métodos ------------------------------- */
     /**
@@ -40,28 +41,44 @@ public class Dados extends javax.swing.JFrame {
                 spinnerLanzamientos.setValue(1);
                 break;
 
+            case "D3":
+                numTipoDado = 3;
+                saltoLinea = 20;
+                break;
+
             case "D4":
                 numTipoDado = 4;
+                saltoLinea = 20;
                 break;
 
             case "D6":
                 numTipoDado = 6;
+                saltoLinea = 20;
                 break;
 
             case "D8":
                 numTipoDado = 8;
+                saltoLinea = 20;
                 break;
 
             case "D10":
                 numTipoDado = 10;
+                saltoLinea = 15;
                 break;
 
             case "D12":
                 numTipoDado = 12;
+                saltoLinea = 14;
                 break;
 
             case "D20":
                 numTipoDado = 20;
+                saltoLinea = 13;
+                break;
+
+            case "D100":
+                numTipoDado = 100;
+                saltoLinea = 12;
                 break;
 
             default:
@@ -70,7 +87,8 @@ public class Dados extends javax.swing.JFrame {
 
         // Bucle del número de lanzamientos
         for (int i = 0; i < numLanzamientos; i++) {
-            int resultado = r.nextInt(numTipoDado) + 1;
+            int resultado = 0;
+            resultado = r.nextInt(numTipoDado) + 1;
             //System.out.println(String.valueOf(resultado));
 
             // Si es un lanzamiento de moneda
@@ -92,7 +110,7 @@ public class Dados extends javax.swing.JFrame {
                 }
             } else { // Si el lanzamiento no es de moneda
                 // Inserción de retorno de carro a los 23 números
-                if (i > 0 && i % 23 == 0) {
+                if (i > 0 && i % saltoLinea == 0) {
                     textoResultado.setText(textoResultado.getText() + "\n");
                 }
 
@@ -163,8 +181,7 @@ public class Dados extends javax.swing.JFrame {
         textoResultado.setEditable(false);
         scrollTextoResultado.setViewportView(textoResultado);
 
-        cajaTipoDado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Moneda", "D4", "D6", "D8", "D10", "D12", "D20" }));
-        cajaTipoDado.setSelectedIndex(2);
+        cajaTipoDado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Moneda", "D3", "D4", "D6", "D8", "D10", "D12", "D20", "D100" }));
         cajaTipoDado.setToolTipText("");
 
         labelResultado.setText("Resultados:");
