@@ -1,6 +1,7 @@
 package codigo;
 
 import java.util.Random;
+import javax.swing.JFrame;
 
 /**
  * Programa de lanzamiento de dados para juegos de roll. Este programa permite
@@ -168,6 +169,7 @@ public class Dados extends javax.swing.JFrame {
 
         jTextField1.setText("jTextField1");
 
+        setTitle("LanzaDados");
         setResizable(false);
 
         labelLanzamientos.setText("Lanzamientos:");
